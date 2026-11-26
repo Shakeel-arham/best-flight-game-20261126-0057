@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Canyon Courier — a desert-canyon mail run</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #141021;
+    height: 100%;
+    overflow: hidden;
+  }
+  #game {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+    background: #2b3a67;
+    cursor: crosshair;
+  }
+</style>
+</head>
+<body>
+<canvas id="game" width="1280" height="800"></canvas>
+<script src="src/config.js"></script>
+<script src="src/input.js"></script>
+<script src="src/world.js"></script>
+<script src="src/render.js"></script>
+<script src="src/audio.js"></script>
+<script src="src/shots.js"></script>
+<script src="src/main.js"></script>
+<script>
+  // Boot the game once the page is ready. All state lives in CC_MAIN.
+  window.addEventListener('load', function () {
+    var canvas = document.getElementById('game');
+    CC_MAIN.boot(canvas);
+  });
+</script>
+</body>
+</html>
